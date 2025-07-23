@@ -1,0 +1,416 @@
+/* === MODERN STEPPER === */
+.modern-stepper-bar {
+  width: 100%;
+  max-width: 100%;
+  background: var(--stepper-bg-gradient);
+  border-radius: var(--stepper-radius);
+  box-shadow: var(--stepper-shadow);
+  padding: 18px 0 14px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 36px auto;
+  min-width: 0;
+  position: relative;
+  z-index: 10;
+  transition: background 0.3s;
+  overflow: visible;
+}
+@media (max-width: 900px) {
+  .modern-stepper-bar {
+    align-items: center;
+    padding: 10px 0 6px 0;
+  }
+  .modern-stepper-list {
+    margin-top: -10px;
+  }
+}
+@media (max-width: 600px) {
+  .modern-stepper-bar {
+    align-items: center;
+    padding: 6px 0 4px 0;
+  }
+  .modern-stepper-list {
+    margin-top: -8px;
+  }
+}
+.modern-stepper-step.active .modern-stepper-circle {
+  z-index: 20; /* glow всегда поверх */
+}
+.modern-stepper-list {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  position: relative;
+  justify-content: space-between;
+  margin: -14px auto 0 auto; /* отрицательный внешний отступ для glow */
+  overflow-x: auto;
+  overflow-y: visible;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #b3e6ff #e8f1fb;
+}
+@media (max-width: 900px) {
+  .modern-stepper-bar {
+    align-items: center;
+    padding: 10px 0 6px 0;
+  }
+  .modern-stepper-list {
+    margin-top: -10px;
+  }
+}
+@media (max-width: 600px) {
+  .modern-stepper-bar {
+    align-items: center;
+    padding: 6px 0 4px 0;
+  }
+  .modern-stepper-list {
+    margin-top: -8px;
+  }
+}
+/* Линия теперь отдельным элементом, не в каждом шаге! */
+.modern-stepper-connector {
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%;
+  height: 3px;
+  background: var(--stepper-line-gradient);
+  z-index: 0;
+  border-radius: 2px;
+  opacity: 0.85;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.modern-stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-width: 0;
+  flex: 1 1 0;
+  z-index: 1;
+  transition: filter 0.2s;
+  overflow: visible; /* КРИТИЧНО: разрешаем glow выходить за пределы шага */
+}
+.modern-stepper-circle {
+  width: var(--stepper-circle-size);
+  height: var(--stepper-circle-size);
+  border-radius: 50%;
+  background: var(--stepper-circle-future);
+  border: var(--stepper-circle-border) solid #b3e6ff;
+  color: var(--stepper-circle-number-future);
+  font-size: 1.13em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 9px;
+  box-shadow: 0 2px 8px #b3e6ff22, 0 1px 2px #fff8;
+  transition: background .22s, border .22s, color .22s, box-shadow .22s, font-size .22s, filter .22s;
+  outline: none;
+  cursor: default;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+  filter: blur(0.5px) saturate(1.1);
+  backdrop-filter: blur(2.5px) saturate(1.2);
+  background-clip: padding-box;
+}
+.modern-stepper-step.completed .modern-stepper-circle {
+  background: var(--stepper-circle-completed);
+  color: #fff;
+  border-color: #4fc3ff;
+  box-shadow: 0 0 0 4px #4fc3ff33, 0 2px 8px #0797ee33;
+  filter: none;
+  cursor: pointer;
+}
+.modern-stepper-step.active .modern-stepper-circle {
+  background: var(--stepper-circle-active);
+  color: #fff;
+  border-color: var(--stepper-accent);
+  font-size: 1.22em;
+  box-shadow: 0 0 0 7px #4fc3ff55, 0 2px 16px #0797ee55;
+  filter: drop-shadow(0 0 16px #4fc3ff88);
+  cursor: pointer;
+  animation: stepper-glow 1.2s infinite alternate;
+}
+@keyframes stepper-glow {
+  0% { box-shadow: 0 0 0 7px #4fc3ff55, 0 2px 16px #0797ee55; }
+  100% { box-shadow: 0 0 0 13px #4fc3ff44, 0 2px 24px #0797ee77; }
+}
+.modern-stepper-step.future .modern-stepper-circle {
+  background: var(--stepper-circle-future);
+  color: var(--stepper-circle-number-future);
+  opacity: 0.95;
+  border-color: #b3e6ff;
+  filter: blur(0.5px) saturate(1.1);
+  box-shadow: 0 2px 8px #b3e6ff22, 0 1px 2px #fff8;
+  cursor: not-allowed;
+}
+.modern-stepper-label {
+  font-size: 1.01em;
+  font-family: inherit;
+  color: var(--stepper-label);
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.97;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  transition: color .22s, opacity .22s;
+  text-shadow: 0 2px 8px #b3e6ff33;
+}
+.modern-stepper-step.completed .modern-stepper-label,
+.modern-stepper-step.active .modern-stepper-label {
+  color: var(--stepper-label-active);
+  opacity: 1;
+  text-shadow: 0 2px 12px #4fc3ff77;
+}
+.modern-stepper-step.future .modern-stepper-label {
+  color: var(--stepper-label-future);
+  opacity: 0.7;
+  text-shadow: none;
+}
+/* RESPONSIVENESS: на мобиле только степпер скроллится */
+@media (max-width: 900px) {
+  .modern-stepper-bar {
+    align-items: center;
+    padding: 10px 0 6px 0;
+  }
+  .modern-stepper-list {
+    /* min-width: 600px; */
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+  }
+  .modern-stepper-circle {
+    width: var(--stepper-circle-size-mobile);
+    height: var(--stepper-circle-size-mobile);
+    font-size: 0.95em;
+  }
+  .modern-stepper-label {
+    font-size: 0.82em;
+  }
+  .modern-stepper-connector {
+    height: 2px;
+  }
+}
+@media (max-width: 600px) {
+  .modern-stepper-bar {
+    align-items: center;
+    padding: 6px 0 4px 0;
+  }
+  .modern-stepper-list {
+    /* min-width: 500px; */
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    gap: 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+  .modern-stepper-label {
+    display: none;
+  }
+  .modern-stepper-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 0.85em;
+    margin-bottom: 0;
+  }
+  .modern-stepper-connector {
+    height: 1.5px;
+  }
+}
+/* === END MODERN STEPPER === */
+
+/* === СТИЛИ ДЛЯ НОВОГО КРЕАТИВНОГО STEPPER === */
+.stepper-container {
+  width: 100%;
+  max-width: 100vw;
+  background: linear-gradient(90deg, #0797ee 0%, #4fc3ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 6px 32px 0 #0797ee33, 0 1.5px 8px 0 #4fc3ff22;
+  margin: 0 auto 38px auto;
+  padding: 28px 2vw 24px 2vw; /* увеличен padding-top */
+  overflow-x: auto;
+  overflow-y: visible;
+  overflow: visible;
+  min-width: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.stepper-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 100vw;
+  min-width: 0;
+  position: relative;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 20px;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: visible;
+  overflow: visible;
+}
+.stepper-bar::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 50%;
+  height: 4px;
+  background: linear-gradient(90deg, #b3e6ff 0%, #0797ee 100%);
+  border-radius: 2px;
+  z-index: 0;
+  opacity: 0.32;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1 1 0;
+  min-width: 70px;
+  user-select: none;
+  outline: none;
+  background: none;
+}
+.stepper-circle {
+  width: 44px;
+  height: 44px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #eaf6ff 60%, #b3e6ff 100%);
+  color: #0797ee;
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px #0797ee22, 0 1px 0 #fff;
+  border: 3px solid #b3e6ff;
+  transition: all 0.25s cubic-bezier(.45,.03,.48,.94);
+  position: relative;
+  overflow: visible;
+  margin-bottom: 8px;
+  filter: none;
+  min-width: unset;
+  min-height: unset;
+  max-width: unset;
+  max-height: unset;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  .stepper-circle {
+    width: 32px; height: 32px; aspect-ratio: 1/1; font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .stepper-circle {
+    width: 18px; height: 18px; aspect-ratio: 1/1; font-size: 9px;
+  }
+}
+.stepper-step.completed .stepper-circle {
+  background: linear-gradient(145deg, #4fc3ff 60%, #0797ee 100%);
+  border-color: #4fc3ff;
+  color: #fff;
+  box-shadow: 0 0 0 4px #4fc3ff33, 0 2px 12px #0797ee33;
+}
+.stepper-step.active .stepper-circle {
+  border-color: #fff;
+  background: linear-gradient(145deg, #0797ee 60%, #4fc3ff 100%);
+  color: #fff;
+  box-shadow: 0 0 0 10px #0797ee44, 0 2px 18px #0797ee77;
+  animation: stepper-glow-creative 1.3s infinite alternate;
+  z-index: 20;
+}
+@keyframes stepper-glow-creative {
+  0% {
+    box-shadow: 0 0 0 10px #0797ee44, 0 2px 18px #0797ee77;
+    filter: brightness(1.08) drop-shadow(0 0 8px #4fc3ff88);
+  }
+  100% {
+    box-shadow: 0 0 0 18px #4fc3ff33, 0 4px 28px #0797ee99;
+    filter: brightness(1.13) drop-shadow(0 0 16px #4fc3ffcc);
+  }
+}
+.stepper-step.future .stepper-circle {
+  background: linear-gradient(145deg, #eaf6ff 60%, #b3e6ff 100%);
+  color: #b3e6ff;
+  border-color: #e0f2ff;
+  opacity: 0.7;
+  box-shadow: 0 1px 4px #b3e6ff22, 0 1px 2px #fff8;
+  filter: blur(0.3px) saturate(1.1);
+  cursor: not-allowed;
+}
+.stepper-label {
+  margin-top: 4px;
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  text-shadow: 0 2px 10px #0797ee77, 0 1px 4px #4fc3ff55;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  transition: color .22s, opacity .22s;
+  opacity: 0.97;
+}
+.stepper-step.completed .stepper-label,
+.stepper-step.active .stepper-label {
+  color: #fff;
+  opacity: 1;
+  text-shadow: 0 2px 14px #4fc3ffcc, 0 1px 6px #0797ee99;
+}
+.stepper-step.future .stepper-label {
+  color: #b3e6ff;
+  opacity: 0.6;
+  text-shadow: none;
+}
+.stepper-step:focus .stepper-circle,
+.stepper-step:hover .stepper-circle {
+  box-shadow: 0 0 0 12px #0797ee33, 0 2px 12px #0797ee55;
+  outline: none;
+  filter: brightness(1.10);
+}
+@media (max-width: 900px) {
+  .stepper-bar { padding: 0; }
+  .stepper-circle {
+    width: 32px; height: 32px; min-width: 32px; min-height: 32px; max-width: 32px; max-height: 32px; font-size: 13px;
+  }
+  .stepper-step { min-width: 44px; }
+}
+@media (max-width: 600px) {
+  .stepper-container { padding: 7px 1vw 10px 1vw; }
+  .stepper-bar { padding: 0; }
+  .stepper-circle {
+    width: 18px; height: 18px; min-width: 18px; min-height: 18px; max-width: 18px; max-height: 18px; font-size: 9px;
+  }
+  .stepper-step { min-width: 24px; }
+  .stepper-label { font-size: 8px; }
+}
+/* === КОНЕЦ: КРЕАТИВНЫЙ STEPPER === */ 

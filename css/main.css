@@ -1,0 +1,101 @@
+:root {
+  /* Основные цвета сайта Pool Tools Australia */
+  --primary-blue: #0797ee;
+  --light-blue: #6bc1f4;
+  --very-light-blue: #d7eefc;
+  --orange: #f97232;
+  
+  /* Дополнительные цвета */
+  --white: #ffffff;
+  --light-gray: #f8fafc;
+  --gray: #6a7a8a;
+  --dark-gray: #2a3a4a;
+  --border-light: #e8f1fb;
+  
+  /* Тени и эффекты */
+  --shadow-light: 0 2px 8px rgba(7, 151, 238, 0.1);
+  --shadow-medium: 0 4px 16px rgba(7, 151, 238, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(7, 151, 238, 0.2);
+  
+  /* Градиенты */
+  --gradient-primary: linear-gradient(135deg, #0797ee 0%, #6bc1f4 100%);
+  --gradient-light: linear-gradient(135deg, #d7eefc 0%, #f8fafc 100%);
+  
+  /* Размеры и отступы */
+  --max-width: 1420px;
+  --card-width: calc((var(--max-width) - 80px) / 3); /* 3 карточки с отступами */
+  --border-radius: 12px;
+  --border-radius-small: 8px;
+  
+  /* Шрифты */
+  --font-primary: 'Archivo', sans-serif;
+  --font-secondary: 'Barlow', sans-serif;
+  
+  /* Размеры шрифтов */
+  --font-size-small: 14px;
+  --font-size-base: 16px;
+  --font-size-medium: 18px;
+  --font-size-large: 24px;
+  --font-size-xl: 32px;
+  
+  /* Переходы */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap');
+
+body {
+  background: var(--white);
+  color: var(--dark-gray);
+  font-family: var(--font-primary);
+  margin: 0;
+  min-height: 100vh;
+  padding-bottom: 90px;
+  line-height: 1.6;
+}
+
+.main-title {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+  color: var(--dark-gray);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--gray);
+  font-size: var(--font-size-base);
+  margin-bottom: 40px;
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Контейнер с максимальной шириной */
+.calculator-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 600px) {
+  .main-title { 
+    font-size: var(--font-size-large); 
+    margin-bottom: 12px;
+  }
+  .subtitle { 
+    font-size: var(--font-size-small); 
+    margin-bottom: 32px;
+  }
+  .calculator-container {
+    padding: 0 16px;
+  }
+} 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pool Cost Estimator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Подключение CSS файлов -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/stepper.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="stepper-container">
+    <div class="stepper-bar" id="stepperBar"></div>
+  </div>
+  <h1 class="main-title">SELECT POOL MATERIAL</h1>
+  <div class="subtitle">Choose the type of pool shell that best fits your needs. Only one option can be selected.</div>
+  <div class="design-grid" id="designGrid"></div>
+  <div id="concreteForm" style="display:none;"></div>
+  <div class="next-bar">
+    <button class="next-btn" id="prevBtn" style="background:#dde2d2;color:#222;margin-right:12px;display:none;">BACK</button>
+    <button class="next-btn" id="nextBtn" disabled>NEXT</button>
+  </div>
+  <!-- === MODAL (Learn More) === -->
+  <div id="modalOverlay" class="modal-overlay" tabindex="-1" aria-modal="true" style="display:none;">
+    <div class="modal-learnmore" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+      <button class="modal-learnmore-close" id="modalCloseBtn" aria-label="Close">×</button>
+      <h2 class="modal-learnmore-title" id="modalTitle">Learn More</h2>
+      <div class="modal-learnmore-desc" id="modalDesc">Demo info about this option/card. (TODO: Inject real content here)</div>
+      <button class="modal-learnmore-btn" id="modalCloseBtn2">Close</button>
+    </div>
+  </div>
+  <!-- === END MODAL === -->
+  
+  <!-- Подключение JavaScript файлов -->
+  <script src="js/config/pool-config.js"></script>
+  <script src="js/visualizer.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 
