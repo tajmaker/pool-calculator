@@ -343,9 +343,54 @@ const fibreglassModels = [
 
 // --- ФОРМЫ ДЛЯ CONCRETE ---
 const concreteShapes = [
-  { id: "rectangle", title: "Rectangle", img: "images/concrete.jpg", desc: "Classic rectangular shape." },
-  { id: "oval", title: "Oval", img: "images/concrete.jpg", desc: "Smooth oval shape." },
-  { id: "square", title: "Square", img: "images/concrete.jpg", desc: "Modern square shape." }
+  {
+    id: "rectilinear",
+    title: "Rectilinear Pool",
+    img: "images/3d-rectilinear-pool-1.jpg",
+    desc: "90' perimeter, max depth 1.8m (6ft), approx. 4.5x9m (15x30ft). Classic rectangular pool, ideal for lap swimming and modern backyards."
+  },
+  {
+    id: "freeform",
+    title: "Free Form Pool",
+    img: "images/3d-freeform-pool-1.webp",
+    desc: "90' perimeter, approx. 4.5x9m (15x30ft) at widest, max depth 1.8m (6ft). Organic, flowing shape for a natural look."
+  },
+  {
+    id: "roman",
+    title: "Roman Pool",
+    img: "images/3d-roman-pool-1.jpg",
+    desc: "90' perimeter, approx. 4.5x9m (15x30ft), max depth 1.8m (6ft). Classic Roman ends for timeless elegance."
+  },
+  {
+    id: "spaonly",
+    title: "Spa Only",
+    img: "images/3d-freeform-spa-1.jpg",
+    desc: "32' perimeter spa, approx. 2.4x2.4m (8x8ft), depth 1.2m (4ft), 8 jets. Standalone spa zone."
+  },
+  {
+    id: "rectilinear_spa",
+    title: "Rectilinear Pool and Spa",
+    img: "images/3d-rectilinear-pool-spa-1.webp",
+    desc: "90' perimeter pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Rectangular pool with integrated spa."
+  },
+  {
+    id: "freeform_spa",
+    title: "Free Form Pool and Spa",
+    img: "images/3d-freeform-pool-spa-1.jpg",
+    desc: "90' perimeter freeform pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Natural curves with integrated spa."
+  },
+  {
+    id: "roman_spa",
+    title: "Roman Pool and Spa",
+    img: "images/3d-roman-pool-spa-1.jpg",
+    desc: "90' perimeter Roman pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Roman style with integrated spa."
+  },
+  {
+    id: "freeform_custom",
+    title: "Free Form (Custom)",
+    img: "images/3d-freeform-pool-1.webp",
+    desc: "Custom freeform shape. Enter your preferred dimensions, final design to be discussed with our team."
+  }
 ];
 
 // --- ДАННЫЕ ДЛЯ EQUIPMENT ---
@@ -394,7 +439,7 @@ const steps = [
   { label: "Amenities" },
   { label: "Included" },
   { label: "Planning" },
-  { label: "Cost" }
+  { label: "Review" }
 ];
 
 // --- СОСТОЯНИЕ ---

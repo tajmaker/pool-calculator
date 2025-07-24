@@ -135,3 +135,99 @@
     padding-right: 8px;
   }
 } 
+@media (max-width: 900px) {
+  .review-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px;
+    padding: 18px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .review-form-col, .review-summary-col {
+    width: 100% !important;
+    max-width: 420px;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #captureForm {
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  #reviewSummaryBlock {
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+  }
+  .review-summary-title {
+    text-align: center !important;
+    font-size: 1.25em !important;
+    margin-bottom: 18px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .review-group {
+    padding: 16px 14px 14px 14px !important;
+    margin-bottom: 12px !important;
+  }
+}
+@media (max-width: 600px) {
+  .review-layout {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .review-form-col, .review-summary-col {
+    width: 100% !important;
+    max-width: 420px;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  #captureForm {
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  #reviewSummaryBlock {
+    width: 100% !important;
+    max-width: 420px;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .review-summary-title {
+    text-align: center !important;
+    font-size: 1.1em !important;
+    margin-bottom: 12px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+  .review-group {
+    padding: 12px 8px 10px 8px !important;
+    margin-bottom: 8px !important;
+  }
+} 
