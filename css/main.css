@@ -53,7 +53,7 @@ body {
   font-family: var(--font-primary);
   margin: 0;
   min-height: 100vh;
-  padding-bottom: 90px;
+  padding-bottom: 120px; /* Увеличиваем отступ снизу для кнопок */
   line-height: 1.6;
 }
 
@@ -100,16 +100,7 @@ body {
   }
 } 
 
-.review-layout {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 32px;
-  max-width: 1420px;
-  margin: 0 auto;
-  padding: 32px 0;
-  justify-content: center;
-}
+/* Убираем конфликтующие стили для review-layout */
 .review-form-col, .review-summary-col {
   flex: 1 1 0;
   min-width: 320px;
@@ -392,4 +383,8 @@ body {
     position: static;
     top: auto;
   }
-} 
+}
+
+ 
+
+ 

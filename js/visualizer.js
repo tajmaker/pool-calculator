@@ -119,7 +119,7 @@ function renderConcreteWOWSVGs(shape, length, width, depth) {
   const topView = document.getElementById('svg-top-view');
   const sideView = document.getElementById('svg-side-view');
   if (!topView || !sideView) return;
-  const maxW = 340, maxH = 180;
+  const maxW = 300, maxH = 160;
   let l = Math.max(2, Math.min(50, length));
   let w = Math.max(2, Math.min(20, width));
   let d = Math.max(1, Math.min(3, depth));
@@ -209,7 +209,7 @@ function renderConcreteWOWSVGs(shape, length, width, depth) {
   </svg>`;
 
   // --- Side view SVG (универсальный, с осями координат и анимацией волн) ---
-  const sideW = 220, sideH = 80, sideX = (svgW-sideW)/2, sideY = 10;
+  const sideW = 200, sideH = 70, sideX = (svgW-sideW)/2, sideY = 10;
   let depthPx = ((d-1)/(3-1)) * (sideH-24) + 24;
   let gradId2 = 'poolGradSide';
   let poolRect = `<rect x="${sideX}" y="${sideY}" width="${sideW}" height="${sideH}" rx="18" fill="url(#${gradId2})" stroke="#0797ee" stroke-width="4" filter="drop-shadow(0 4px 16px #0797ee22)"/>`;

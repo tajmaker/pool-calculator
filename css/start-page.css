@@ -1,0 +1,547 @@
+/* === СТАРТОВАЯ СТРАНИЦА === */
+/* Убираем padding-bottom только для стартовой страницы */
+.start-page {
+  padding-bottom: 0 !important;
+}
+
+.start-page {
+  background: var(--white);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Верхний блок с логотипом и кнопкой контакта */
+.start-page-header {
+  background: var(--white);
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-light);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-container {
+  max-width: 1420px;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 35px;
+  width: auto;
+}
+
+.contact-section {
+  display: flex;
+  align-items: center;
+}
+
+.contact-btn {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  background: linear-gradient(135deg, #0056b3 0%, #0797ee 100%);
+}
+
+/* Основной контент */
+.start-page-main-content {
+  display: flex;
+  min-height: calc(100vh - 70px);
+  position: relative;
+  overflow: visible;
+}
+
+/* Левая часть (60%) - текст */
+.start-page-left {
+  flex: 0 0 60%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  margin-left: calc((100vw - 1420px) / 2);
+  max-width: calc(60% + (100vw - 1420px) / 2);
+}
+
+.content-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.start-page-title {
+  font-size: 2.8em;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.start-page-subtitle {
+  font-size: 1.1em;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.start-page-note {
+  font-size: 0.9em;
+  color: var(--gray);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.start-page-time {
+  margin-bottom: 25px;
+}
+
+.time-badge {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Центральная кнопка */
+.start-button-center {
+  text-align: center;
+  position: relative;
+  z-index: 4;
+}
+
+.start-page-content-section {
+}
+
+.start-page-heading {
+  font-size: 1.8em;
+  color: var(--dark-gray);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.start-page-description {
+  font-size: 1em;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.start-page-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1em;
+  color: var(--dark-gray);
+}
+
+.feature-icon {
+  color: var(--primary-blue);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.feature-text {
+  font-weight: 500;
+}
+
+/* Правая часть (40%) - фоновое изображение */
+.start-page-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40vw !important;
+  height: 100% !important;
+  background: var(--white);
+  overflow: hidden;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.background-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+  overflow: visible;
+}
+
+.background-section .background-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: brightness(0.7) contrast(1.1);
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+}
+
+.background-section .background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 50%, rgba(0,0,0,0.1) 100%);
+}
+
+/* Новый блок с фото - позиционирован по центру на границе */
+.pool-preview-card {
+  position: absolute;
+  top: 50%;
+  left: calc(100vw - 40vw - 210px);
+  transform: translateY(-50%);
+  width: 420px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-heavy);
+  z-index: 3;
+  background: var(--white);
+  pointer-events: none;
+  max-width: 90vw;
+}
+
+.pool-preview-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.pool-preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.8) contrast(1.1);
+}
+
+.pool-preview-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 20px 15px 15px;
+  text-align: center;
+}
+
+.pool-preview-title {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  letter-spacing: 1px;
+}
+
+.pool-preview-subtitle {
+  font-size: 0.9em;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Адаптивные стили */
+/* Для очень больших экранов */
+@media (min-width: 1600px) {
+  .pool-preview-card {
+    left: calc(100vw - 40vw - 310px + 100px);
+  }
+}
+
+@media (max-width: 1400px) {
+  .content-container {
+    padding: 0 40px;
+  }
+  
+  .pool-preview-card {
+    left: calc(100vw - 40vw - 210px + 25px);
+  }
+}
+
+/* Скрываем правую часть и pool-preview-card когда они начинают перекрывать текст */
+@media (max-width: 1220px) {
+  .start-page-right {
+    display: none;
+  }
+  
+  .pool-preview-card {
+    display: none;
+  }
+  
+  .start-page-left {
+    flex: 1;
+    width: 100%;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .start-page-main-content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+}
+
+
+
+@media (max-width: 900px) {
+  .start-page-main-content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+  
+  .start-page-left {
+    flex: none;
+    padding: 40px 20px;
+    height: auto;
+    min-height: auto;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .content-container {
+    padding: 0 20px;
+    min-height: auto;
+  }
+  
+  .start-page-title {
+    font-size: 2.5em;
+    text-align: center;
+  }
+  
+  .start-page-subtitle {
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  .start-page-heading {
+    font-size: 1.6em;
+    text-align: center;
+  }
+  
+  .start-page-description {
+    font-size: 0.95em;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    padding: 0 16px;
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .start-page-header {
+    height: auto;
+    padding: 15px 0;
+  }
+  
+  .logo {
+    height: 30px;
+    max-width: 100%;
+  }
+  
+  .contact-btn {
+    padding: 8px 16px;
+    font-size: 0.8em;
+    white-space: nowrap;
+  }
+  
+  .start-page-main-content {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+  
+  .start-page-left {
+    padding: 30px 16px;
+    min-height: auto;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .content-container {
+    padding: 0 16px;
+    min-height: auto;
+  }
+  
+  .start-page-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  
+  .start-page-subtitle {
+    font-size: 0.95em;
+    margin-bottom: 12px;
+  }
+  
+  .start-page-heading {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+  }
+  
+  .start-page-description {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+  
+  .feature-item {
+    font-size: 0.95em;
+  }
+  
+  .start-button-center {
+    margin: 40px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .start-page-main-content {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+  
+  .start-page-left {
+    padding: 20px 12px;
+    min-height: auto;
+    margin-left: 0;
+    max-width: 100%;
+  }
+  
+  .content-container {
+    padding: 0 12px;
+    min-height: auto;
+  }
+  
+  .start-page-title {
+    font-size: 1.8em;
+    margin-bottom: 12px;
+  }
+  
+  .start-page-subtitle {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  
+  .start-page-heading {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+  
+  .start-page-description {
+    font-size: 0.85em;
+    margin-bottom: 12px;
+  }
+  
+  .feature-item {
+    font-size: 0.9em;
+  }
+  
+  .start-button-center {
+    margin: 30px 0;
+  }
+}
+
+/* Стили для кнопки старта */
+.start-btn {
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  padding: 18px 36px;
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-heavy);
+  background: linear-gradient(135deg, #0056b3 0%, #0797ee 100%);
+}
+
+.start-btn:active {
+  transform: translateY(-1px);
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.start-btn:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 768px) {
+  .start-btn {
+    width: 100%;
+    padding: 20px 24px;
+    font-size: 1.1em;
+  }
+} 

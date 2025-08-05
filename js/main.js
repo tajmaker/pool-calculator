@@ -7,7 +7,8 @@ const materialOptions = [
     img: "images/fiberglass.jpg",
     badge: "Popular",
     link: { label: "Learn more", url: "#" },
-    included: false
+    included: false,
+    default: true
   },
   {
     id: "concrete",
@@ -16,7 +17,8 @@ const materialOptions = [
     img: "images/concrete.jpg",
     badge: "Customizable",
     link: { label: "Learn more", url: "#" },
-    included: false
+    included: false,
+    default: false
   },
   {
     id: "vinyl",
@@ -24,7 +26,8 @@ const materialOptions = [
     desc: "Affordable, flexible design, soft surface. Quick installation and easy maintenance.",
     img: "images/placeholder.jfif",
     link: { label: "Learn more", url: "#" },
-    included: false
+    included: false,
+    default: false
   }
 ];
 
@@ -36,6 +39,8 @@ const fibreglassModels = [
     desc: "Blue Shell Pool", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/eden-center-steps-fibreglass-pool-shell" }, 
+    included: false,
+    default: true,
     sizes: [
       { id: "6.2x3.2", size: "6.2m x 3.2m x 1.6m", length: 6.2, width: 3.2, depth: 1.6 },
       { id: "7.5x3.5", size: "7.5m x 3.5m x 1.7m", length: 7.5, width: 3.5, depth: 1.7 }
@@ -48,6 +53,8 @@ const fibreglassModels = [
     desc: "Mini Shell Pool", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/halo-oval-spa-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
       { id: "4.0x2.5", size: "4.0m x 2.5m x 1.3m", length: 4.0, width: 2.5, depth: 1.3 }
     ],
@@ -59,6 +66,8 @@ const fibreglassModels = [
     desc: "Lap Pool Shell", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/the-stride-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
       { id: "10.0x2.5", size: "10.0m x 2.5m x 1.6m", length: 10.0, width: 2.5, depth: 1.6 },
       { id: "12.0x2.5", size: "12.0m x 2.5m x 1.6m", length: 12.0, width: 2.5, depth: 1.6 },
@@ -72,6 +81,8 @@ const fibreglassModels = [
     desc: "Shell Swimming Pool", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/luma-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
       { id: "7.0x3.5", size: "7.0m x 3.5m x 1.7m", length: 7.0, width: 3.5, depth: 1.7 },
       { id: "8.0x4.0", size: "8.0m x 4.0m x 1.8m", length: 8.0, width: 4.0, depth: 1.8 }
@@ -84,6 +95,8 @@ const fibreglassModels = [
     desc: "Plunge Pool Shell", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/avoca-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
       { id: "6.0x3.2", size: "6.0m x 3.2m x 1.6m", length: 6.0, width: 3.2, depth: 1.6 }
     ],
@@ -95,6 +108,8 @@ const fibreglassModels = [
     desc: "Fibreglass Pool Shell", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/olympia-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
       { id: "8.0x4.0", size: "8.0m x 4.0m x 1.8m", length: 8.0, width: 4.0, depth: 1.8 },
       { id: "9.0x4.5", size: "9.0m x 4.5m x 1.8m", length: 9.0, width: 4.5, depth: 1.8 }
@@ -102,103 +117,16 @@ const fibreglassModels = [
     hasMultipleSizes: true
   },
   { 
-    id: "horizon", 
-    title: "Horizon", 
+    id: "halo", 
+    title: "Halo", 
     desc: "Fibreglass Pool Shell", 
     img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/horizon-fibreglass-pool-shell" }, 
+    link: { label: "Learn more", url: "https://pooltools.au/products/halo-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
-      { id: "7.5x3.5", size: "7.5m x 3.5m x 1.7m", length: 7.5, width: 3.5, depth: 1.7 },
-      { id: "8.5x4.0", size: "8.5m x 4.0m x 1.8m", length: 8.5, width: 4.0, depth: 1.8 }
-    ],
-    hasMultipleSizes: true
-  },
-  { 
-    id: "marra-coora", 
-    title: "Marra Coora", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/marra-coora-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.5x3.2", size: "6.5m x 3.2m x 1.6m", length: 6.5, width: 3.2, depth: 1.6 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "azure", 
-    title: "Azure", 
-    desc: "Pool Fibreglass Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/azure-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "5.5x2.5", size: "5.5m x 2.5m x 1.5m", length: 5.5, width: 2.5, depth: 1.5 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "moana", 
-    title: "Moana", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/moana-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.0x3.0", size: "6.0m x 3.0m x 1.6m", length: 6.0, width: 3.0, depth: 1.6 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "yara-with-spa", 
-    title: "Yara with SPA", 
-    desc: "Spa Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/yara-with-spa-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "7.5x3.5", size: "7.5m x 3.5m x 1.7m", length: 7.5, width: 3.5, depth: 1.7 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "billabong", 
-    title: "Billabong", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/billabong-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "5.0x2.5", size: "5.0m x 2.5m x 1.5m", length: 5.0, width: 2.5, depth: 1.5 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "mirra", 
-    title: "Mirra", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/mirra-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "4.5x2.5", size: "4.5m x 2.5m x 1.4m", length: 4.5, width: 2.5, depth: 1.4 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "drift", 
-    title: "Drift", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/drift-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.0x2.5", size: "6.0m x 2.5m x 1.5m", length: 6.0, width: 2.5, depth: 1.5 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "ariki", 
-    title: "Ariki", 
-    desc: "Big Shell Pool", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/ariki-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "8.5x4.0", size: "8.5m x 4.0m x 1.8m", length: 8.5, width: 4.0, depth: 1.8 },
-      { id: "10.0x4.5", size: "10.0m x 4.5m x 1.8m", length: 10.0, width: 4.5, depth: 1.8 }
+      { id: "7.0x3.5", size: "7.0m x 3.5m x 1.7m", length: 7.0, width: 3.5, depth: 1.7 },
+      { id: "8.0x4.0", size: "8.0m x 4.0m x 1.8m", length: 8.0, width: 4.0, depth: 1.8 }
     ],
     hasMultipleSizes: true
   },
@@ -208,57 +136,11 @@ const fibreglassModels = [
     desc: "Fibreglass Pool Shell", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/aloha-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
       { id: "7.0x3.5", size: "7.0m x 3.5m x 1.7m", length: 7.0, width: 3.5, depth: 1.7 },
       { id: "8.0x4.0", size: "8.0m x 4.0m x 1.8m", length: 8.0, width: 4.0, depth: 1.8 }
-    ],
-    hasMultipleSizes: true
-  },
-  { 
-    id: "aria", 
-    title: "Aria", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/aria-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.0x3.0", size: "6.0m x 3.0m x 1.6m", length: 6.0, width: 3.0, depth: 1.6 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "eden-end-steps", 
-    title: "Eden End Steps", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/eden-end-steps-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.2x3.2", size: "6.2m x 3.2m x 1.6m", length: 6.2, width: 3.2, depth: 1.6 },
-      { id: "7.5x3.5", size: "7.5m x 3.5m x 1.7m", length: 7.5, width: 3.5, depth: 1.7 }
-    ],
-    hasMultipleSizes: true
-  },
-  { 
-    id: "solenne", 
-    title: "Solenne", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/solenne-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "7.5x3.5", size: "7.5m x 3.5m x 1.7m", length: 7.5, width: 3.5, depth: 1.7 },
-      { id: "8.5x4.0", size: "8.5m x 4.0m x 1.8m", length: 8.5, width: 4.0, depth: 1.8 }
-    ],
-    hasMultipleSizes: true
-  },
-  { 
-    id: "triton", 
-    title: "Triton", 
-    desc: "Fiberglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/triton-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "10.0x2.5", size: "10.0m x 2.5m x 1.6m", length: 10.0, width: 2.5, depth: 1.6 },
-      { id: "12.0x2.5", size: "12.0m x 2.5m x 1.6m", length: 12.0, width: 2.5, depth: 1.6 },
-      { id: "15.0x2.5", size: "15.0m x 2.5m x 1.6m", length: 15.0, width: 2.5, depth: 1.6 }
     ],
     hasMultipleSizes: true
   },
@@ -268,76 +150,13 @@ const fibreglassModels = [
     desc: "Fibreglass Pool Shell", 
     img: "images/fiberglass.jpg", 
     link: { label: "Learn more", url: "https://pooltools.au/products/alto-fibreglass-pool-shell" }, 
+    included: false,
+    default: false,
     sizes: [
-      { id: "5.5x2.5", size: "5.5m x 2.5m x 1.5m", length: 5.5, width: 2.5, depth: 1.5 }
+      { id: "7.0x3.5", size: "7.0m x 3.5m x 1.7m", length: 7.0, width: 3.5, depth: 1.7 },
+      { id: "8.0x4.0", size: "8.0m x 4.0m x 1.8m", length: 8.0, width: 4.0, depth: 1.8 }
     ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "vela-spa", 
-    title: "Vela Spa", 
-    desc: "Plunge Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/vela-spa-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.0x2.5", size: "6.0m x 2.5m x 1.4m", length: 6.0, width: 2.5, depth: 1.4 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "the-rocks", 
-    title: "The Rocks", 
-    desc: "Plunge Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/the-rocks-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "4.0x2.5", size: "4.0m x 2.5m x 1.3m", length: 4.0, width: 2.5, depth: 1.3 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "eden-with-spa", 
-    title: "7.5m Eden with Spa", 
-    desc: "Plunge Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/eden-with-spa-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "7.5x3.5", size: "7.5m x 3.5m x 1.7m", length: 7.5, width: 3.5, depth: 1.7 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "longbeach", 
-    title: "Longbeach", 
-    desc: "Large Shell Pool", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/longbeach-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.0x2.5", size: "6.0m x 2.5m x 1.5m", length: 6.0, width: 2.5, depth: 1.5 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "yara", 
-    title: "Yara", 
-    desc: "Fibreglass Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/yara-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "6.2x3.2", size: "6.2m x 3.2m x 1.6m", length: 6.2, width: 3.2, depth: 1.6 }
-    ],
-    hasMultipleSizes: false
-  },
-  { 
-    id: "arctic-white", 
-    title: "Arctic White", 
-    desc: "Plunge Pool Shell", 
-    img: "images/fiberglass.jpg", 
-    link: { label: "Learn more", url: "https://pooltools.au/products/arctic-white-fibreglass-pool-shell" }, 
-    sizes: [
-      { id: "4.0x2.0", size: "4.0m x 2.0m x 1.2m", length: 4.0, width: 2.0, depth: 1.2 }
-    ],
-    hasMultipleSizes: false
+    hasMultipleSizes: true
   }
 ];
 
@@ -347,85 +166,101 @@ const concreteShapes = [
     id: "rectilinear",
     title: "Rectilinear Pool",
     img: "images/3d-rectilinear-pool-1.jpg",
-    desc: "90' perimeter, max depth 1.8m (6ft), approx. 4.5x9m (15x30ft). Classic rectangular pool, ideal for lap swimming and modern backyards."
+    desc: "90' perimeter, max depth 1.8m (6ft), approx. 4.5x9m (15x30ft). Classic rectangular pool, ideal for lap swimming and modern backyards.",
+    included: false,
+    default: true
   },
   {
     id: "freeform",
     title: "Free Form Pool",
     img: "images/3d-freeform-pool-1.webp",
-    desc: "90' perimeter, approx. 4.5x9m (15x30ft) at widest, max depth 1.8m (6ft). Organic, flowing shape for a natural look."
+    desc: "90' perimeter, approx. 4.5x9m (15x30ft) at widest, max depth 1.8m (6ft). Organic, flowing shape for a natural look.",
+    included: false,
+    default: false
   },
   {
     id: "roman",
     title: "Roman Pool",
     img: "images/3d-roman-pool-1.jpg",
-    desc: "90' perimeter, approx. 4.5x9m (15x30ft), max depth 1.8m (6ft). Classic Roman ends for timeless elegance."
+    desc: "90' perimeter, approx. 4.5x9m (15x30ft), max depth 1.8m (6ft). Classic Roman ends for timeless elegance.",
+    included: false,
+    default: false
   },
   {
     id: "spaonly",
     title: "Spa Only",
     img: "images/3d-freeform-spa-1.jpg",
-    desc: "32' perimeter spa, approx. 2.4x2.4m (8x8ft), depth 1.2m (4ft), 8 jets. Standalone spa zone."
+    desc: "32' perimeter spa, approx. 2.4x2.4m (8x8ft), depth 1.2m (4ft), 8 jets. Standalone spa zone.",
+    included: false,
+    default: false
   },
   {
     id: "rectilinear_spa",
     title: "Rectilinear Pool and Spa",
     img: "images/3d-rectilinear-pool-spa-1.webp",
-    desc: "90' perimeter pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Rectangular pool with integrated spa."
+    desc: "90' perimeter pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Rectangular pool with integrated spa.",
+    included: false,
+    default: false
   },
   {
     id: "freeform_spa",
     title: "Free Form Pool and Spa",
     img: "images/3d-freeform-pool-spa-1.jpg",
-    desc: "90' perimeter freeform pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Natural curves with integrated spa."
+    desc: "90' perimeter freeform pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Natural curves with integrated spa.",
+    included: false,
+    default: false
   },
   {
     id: "roman_spa",
     title: "Roman Pool and Spa",
     img: "images/3d-roman-pool-spa-1.jpg",
-    desc: "90' perimeter Roman pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Roman style with integrated spa."
+    desc: "90' perimeter Roman pool + 2.1x2.1m (7x7ft) spa, max depth 1.8m (6ft). Roman style with integrated spa.",
+    included: false,
+    default: false
   },
   {
     id: "freeform_custom",
     title: "Free Form (Custom)",
     img: "images/3d-freeform-pool-1.webp",
-    desc: "Custom freeform shape. Enter your preferred dimensions, final design to be discussed with our team."
+    desc: "Custom freeform shape. Enter your preferred dimensions, final design to be discussed with our team.",
+    included: false,
+    default: false
   }
 ];
 
 // --- ДАННЫЕ ДЛЯ EQUIPMENT ---
 const equipmentOptions = [
-  { id: "basic", title: "Basic", desc: "Single Speed Pump, Chlorinator, Filter", img: "images/placeholder.jfif", badge: "Included", included: true, price: 0 },
-  { id: "intermediate", title: "Intermediate", desc: "Variable Speed Pump, Halo Chlor 25, Med Spec Filter, 2 Lights", img: "images/placeholder.jfif", included: false, price: 12000 },
-  { id: "family", title: "Family Size", desc: "Variable Speed Pump, Quad Core Filter, Halo 35 Chlor, 2 Lights", img: "images/placeholder.jfif", included: false, price: 15000 }
+  { id: "basic", title: "Basic", desc: "Single Speed Pump, Chlorinator, Filter", img: "images/placeholder.jfif", badge: "Included", included: true, default: true, price: 0 },
+  { id: "intermediate", title: "Intermediate", desc: "Variable Speed Pump, Halo Chlor 25, Med Spec Filter, 2 Lights", img: "images/placeholder.jfif", included: false, default: false, price: 12000 },
+  { id: "family", title: "Family Size", desc: "Variable Speed Pump, Quad Core Filter, Halo 35 Chlor, 2 Lights", img: "images/placeholder.jfif", included: false, default: false, price: 15000 }
 ];
 
 // --- ДАННЫЕ ДЛЯ FINISHES ---
 const finishesCoping = [
-  { id: "concrete_pool_edge", title: "Concrete Pool Edge System", desc: "Standard edge system.", badge: "Included", included: true, img: "images/placeholder.jfif", price: 0 },
-  { id: "natural_stone", title: "Drop Down Face Paver - Natural Stone", desc: "Premium natural stone.", included: false, img: "images/placeholder.jfif", price: 8500, included: false },
-  { id: "porcelain", title: "Drop Down Face Paver - Porcelain", desc: "Modern porcelain finish.", included: false, img: "images/placeholder.jfif", price: 7000, included: false },
-  { id: "ceramic", title: "Drop Down Face Paver - Ceramic", desc: "Classic ceramic finish.", included: false, img: "images/placeholder.jfif", price: 6000, included: false }
+  { id: "concrete_pool_edge", title: "Concrete Pool Edge System", desc: "Standard edge system.", badge: "Included", included: true, default: true, img: "images/placeholder.jfif", price: 0 },
+  { id: "natural_stone", title: "Drop Down Face Paver - Natural Stone", desc: "Premium natural stone.", included: false, default: false, img: "images/placeholder.jfif", price: 8500, included: false },
+  { id: "porcelain", title: "Drop Down Face Paver - Porcelain", desc: "Modern porcelain finish.", included: false, default: false, img: "images/placeholder.jfif", price: 7000, included: false },
+  { id: "ceramic", title: "Drop Down Face Paver - Ceramic", desc: "Classic ceramic finish.", included: false, default: false, img: "images/placeholder.jfif", price: 6000, included: false }
 ];
 
 const finishesInternal = [
-  { id: "glass_mosaic", title: "Glass Mosaic", desc: "Premium glass mosaic.", badge: "Included", included: true, img: "images/placeholder.jfif", price: 0 },
-  { id: "porcelain_40", title: "40x40 Porcelain", desc: "Porcelain tile 40x40mm.", included: false, img: "images/placeholder.jfif", price: 5000, included: false },
-  { id: "penny_rounds", title: "Penny Rounds", desc: "Stylish penny rounds.", included: false, img: "images/placeholder.jfif", price: 4000, included: false }
+  { id: "glass_mosaic", title: "Glass Mosaic", desc: "Premium glass mosaic.", badge: "Included", included: true, default: true, img: "images/placeholder.jfif", price: 0 },
+  { id: "porcelain_40", title: "40x40 Porcelain", desc: "Porcelain tile 40x40mm.", included: false, default: false, img: "images/placeholder.jfif", price: 5000, included: false },
+  { id: "penny_rounds", title: "Penny Rounds", desc: "Stylish penny rounds.", included: false, default: false, img: "images/placeholder.jfif", price: 4000, included: false }
 ];
 
 // Объединенный массив для finishes с группировкой
 const finishesOptions = [
   // Coping Materials
-  { id: "concrete_pool_edge", title: "Concrete Pool Edge System", desc: "Standard edge system.", badge: "Included", group: "coping", included: true, img: "images/placeholder.jfif", price: 0 },
-  { id: "natural_stone", title: "Drop Down Face Paver - Natural Stone", desc: "Premium natural stone.", group: "coping", included: false, img: "images/placeholder.jfif", price: 8500 },
-  { id: "porcelain", title: "Drop Down Face Paver - Porcelain", desc: "Modern porcelain finish.", group: "coping", included: false, img: "images/placeholder.jfif", price: 7000 },
-  { id: "ceramic", title: "Drop Down Face Paver - Ceramic", desc: "Classic ceramic finish.", group: "coping", included: false, img: "images/placeholder.jfif", price: 6000 },
+  { id: "concrete_pool_edge", title: "Concrete Pool Edge System", desc: "Standard edge system.", badge: "Included", group: "coping", included: true, default: true, img: "images/placeholder.jfif", price: 0 },
+  { id: "natural_stone", title: "Drop Down Face Paver - Natural Stone", desc: "Premium natural stone.", group: "coping", included: false, default: false, img: "images/placeholder.jfif", price: 8500 },
+  { id: "porcelain", title: "Drop Down Face Paver - Porcelain", desc: "Modern porcelain finish.", group: "coping", included: false, default: false, img: "images/placeholder.jfif", price: 7000 },
+  { id: "ceramic", title: "Drop Down Face Paver - Ceramic", desc: "Classic ceramic finish.", group: "coping", included: false, default: false, img: "images/placeholder.jfif", price: 6000 },
   
   // Internal Finishes
-  { id: "glass_mosaic", title: "Glass Mosaic", desc: "Premium glass mosaic.", badge: "Included", group: "internal", included: true, img: "images/placeholder.jfif", price: 0 },
-  { id: "porcelain_40", title: "40x40 Porcelain", desc: "Porcelain tile 40x40mm.", group: "internal", included: false, img: "images/placeholder.jfif", price: 5000 },
-  { id: "penny_rounds", title: "Penny Rounds", desc: "Stylish penny rounds.", group: "internal", included: false, img: "images/placeholder.jfif", price: 4000 }
+  { id: "glass_mosaic", title: "Glass Mosaic", desc: "Premium glass mosaic.", badge: "Included", group: "internal", included: true, default: true, img: "images/placeholder.jfif", price: 0 },
+  { id: "porcelain_40", title: "40x40 Porcelain", desc: "Porcelain tile 40x40mm.", group: "internal", included: false, default: false, img: "images/placeholder.jfif", price: 5000 },
+  { id: "penny_rounds", title: "Penny Rounds", desc: "Stylish penny rounds.", group: "internal", included: false, default: false, img: "images/placeholder.jfif", price: 4000 }
 ];
 
 // --- ДАННЫЕ СТЕППЕРА ---
@@ -443,12 +278,15 @@ const steps = [
 ];
 
 // --- СОСТОЯНИЕ ---
-let stepIndex = 0;
+let stepIndex = 0; // Начинаем с первого шага калькулятора
+let step7Activated = false; // Отдельная переменная для отслеживания активации шага 7 (INCLUDED)
+let step8Activated = false; // Отдельная переменная для отслеживания активации шага 8
+let step9Activated = false; // Отдельная переменная для отслеживания активации шага 9 (REVIEW)
 let selectedMaterial = null;
 let selectedDesign = null;
 let selectedShape = null;
 let selectedSize = null; // Новая переменная для выбранного размера
-concreteDims = { length: 8, width: 4, depth: 1.5 };
+let concreteDims = { length: 8, width: 4, depth: 1.5 };
 let selectedEquipment = null;
 let selectedCoping = null;
 let selectedInternal = null;
@@ -459,28 +297,28 @@ let selectedPlanning = [];
 
 // --- ДАННЫЕ ДЛЯ WHAT'S INCLUDED ---
 const includedOptions = [
-  { id: "excavation", title: "Excavation", desc: "Site preparation and excavation work.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "reinforced_steel", title: "Reinforced Steel", desc: "Steel reinforcement for structural integrity.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "plumbing_electric", title: "Plumbing & Electric", desc: "Complete plumbing and electrical installation.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "shotcrete", title: "Shotcrete", desc: "Concrete application for pool shell.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "ceramic_tile", title: "Ceramic/Porcelain Tile Installation", desc: "Professional tile installation service.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "coping_installation", title: "Coping Installation", desc: "Pool edge coping installation.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "equipment_operation", title: "Equipment Required for Operation", desc: "All necessary operational equipment.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "white_plaster", title: "White Plaster Finish", desc: "Standard white plaster pool finish.", img: "images/placeholder.jfif", included: true, price: 0 },
-  { id: "warranties", title: "Warranties", desc: "Comprehensive warranty coverage.", img: "images/placeholder.jfif", included: true, price: 0 }
+  { id: "excavation", title: "Excavation", desc: "Site preparation and excavation work.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "reinforced_steel", title: "Reinforced Steel", desc: "Steel reinforcement for structural integrity.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "plumbing_electric", title: "Plumbing & Electric", desc: "Complete plumbing and electrical installation.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "shotcrete", title: "Shotcrete", desc: "Concrete application for pool shell.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "ceramic_tile", title: "Ceramic/Porcelain Tile Installation", desc: "Professional tile installation service.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "coping_installation", title: "Coping Installation", desc: "Pool edge coping installation.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "equipment_operation", title: "Equipment Required for Operation", desc: "All necessary operational equipment.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "white_plaster", title: "White Plaster Finish", desc: "Standard white plaster pool finish.", img: "images/placeholder.jfif", included: true, default: true, price: 0 },
+  { id: "warranties", title: "Warranties", desc: "Comprehensive warranty coverage.", img: "images/placeholder.jfif", included: true, default: true, price: 0 }
 ];
 
 // --- ДАННЫЕ ДЛЯ PLANNING ---
 const planningOptions = [
-  { id: "permits", title: "Permits", desc: "Building permits and approvals required.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "small_access", title: "Small Access", desc: "Limited site access considerations.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "rock_dig", title: "Rock Dig", desc: "Rock excavation and removal.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "hillside", title: "Hillside", desc: "Sloped site considerations.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "caissons", title: "Caissons", desc: "Foundation caissons for stability.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "retaining_wall", title: "Retaining Wall", desc: "Retaining wall construction.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "pool_fence", title: "Pool Fence", desc: "Safety fencing requirements.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "easements", title: "Easements", desc: "Property easement considerations.", img: "images/placeholder.jfif", included: false, price: 0 },
-  { id: "hoa", title: "Home Owner's Association (HOA)", desc: "HOA approval and requirements.", img: "images/placeholder.jfif", included: false, price: 0 }
+  { id: "permits", title: "Permits", desc: "Building permits and approvals required.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "small_access", title: "Small Access", desc: "Limited site access considerations.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "rock_dig", title: "Rock Dig", desc: "Rock excavation and removal.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "hillside", title: "Hillside", desc: "Sloped site considerations.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "caissons", title: "Caissons", desc: "Foundation caissons for stability.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "retaining_wall", title: "Retaining Wall", desc: "Retaining wall construction.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "pool_fence", title: "Pool Fence", desc: "Safety fencing requirements.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "easements", title: "Easements", desc: "Property easement considerations.", img: "images/placeholder.jfif", included: false, default: false, price: 0 },
+  { id: "hoa", title: "Home Owner's Association (HOA)", desc: "HOA approval and requirements.", img: "images/placeholder.jfif", included: false, default: false, price: 0 }
 ];
 
 // --- ДАННЫЕ ДЛЯ ESTIMATED COST ---
@@ -710,27 +548,27 @@ const priceConfig = {
 // Amenities, hardscape, cover, etc. — все с price и included
 // TODO: заменить на реальные значения/структуру при интеграции
 const amenitiesOptions = [
-  { id: "bubblers", title: "Bubblers", desc: "Bubble jets for water features.", img: "images/placeholder.jfif", price: 1200, included: false },
-  { id: "fire_pits", title: "Fire Pits", desc: "Outdoor fire features.", img: "images/placeholder.jfif", price: 3500, included: false },
-  { id: "lounge_area", title: "Lounge Area", desc: "Comfortable seating area.", img: "images/placeholder.jfif", price: 2800, included: false },
-  { id: "deck_jets", title: "Deck Jets", desc: "Water jets on deck surface.", img: "images/placeholder.jfif", price: 1800, included: false },
-  { id: "scuppers", title: "Scuppers", desc: "Water overflow features.", img: "images/placeholder.jfif", price: 2200, included: false },
-  { id: "in_floor_system", title: "In-Floor System", desc: "Hidden cleaning system.", img: "images/placeholder.jfif", price: 4500, included: false },
-  { id: "ozone_sanitation", title: "Ozone Sanitation", desc: "Advanced water treatment.", img: "images/placeholder.jfif", price: 3200, included: false },
-  { id: "led_waterbowls", title: "LED Waterbowls", desc: "Illuminated water features.", img: "images/placeholder.jfif", price: 1600, included: false },
-  { id: "equipment_automation", title: "Equipment Automation Controls", desc: "Smart pool control system.", img: "images/placeholder.jfif", price: 2800, included: false }
+  { id: "bubblers", title: "Bubblers", desc: "Bubble jets for water features.", img: "images/placeholder.jfif", price: 1200, included: false, default: false },
+  { id: "fire_pits", title: "Fire Pits", desc: "Outdoor fire features.", img: "images/placeholder.jfif", price: 3500, included: false, default: false },
+  { id: "lounge_area", title: "Lounge Area", desc: "Comfortable seating area.", img: "images/placeholder.jfif", price: 2800, included: false, default: false },
+  { id: "deck_jets", title: "Deck Jets", desc: "Water jets on deck surface.", img: "images/placeholder.jfif", price: 1800, included: false, default: false },
+  { id: "scuppers", title: "Scuppers", desc: "Water overflow features.", img: "images/placeholder.jfif", price: 2200, included: false, default: false },
+  { id: "in_floor_system", title: "In-Floor System", desc: "Hidden cleaning system.", img: "images/placeholder.jfif", price: 4500, included: false, default: false },
+  { id: "ozone_sanitation", title: "Ozone Sanitation", desc: "Advanced water treatment.", img: "images/placeholder.jfif", price: 3200, included: false, default: false },
+  { id: "led_waterbowls", title: "LED Waterbowls", desc: "Illuminated water features.", img: "images/placeholder.jfif", price: 1600, included: false, default: false },
+  { id: "equipment_automation", title: "Equipment Automation Controls", desc: "Smart pool control system.", img: "images/placeholder.jfif", price: 2800, included: false, default: false }
 ];
 
 const hardscapeOptions = [
-  { id: "honed_concrete", title: "Honed Concrete", desc: "Smooth, modern concrete finish.", img: "images/placeholder.jfif", price: 3500, included: false },
-  { id: "natural_stone", title: "Natural Stone", desc: "Premium natural stone paving.", img: "images/placeholder.jfif", price: 8500, included: false },
-  { id: "pavers", title: "Pavers", desc: "Classic paver hardscape.", img: "images/placeholder.jfif", price: 4200, included: false },
-  { id: "timber_decking", title: "Timber Decking", desc: "Warm timber deck area.", img: "images/placeholder.jfif", price: 3800, included: false }
+  { id: "honed_concrete", title: "Honed Concrete", desc: "Smooth, modern concrete finish.", img: "images/placeholder.jfif", price: 3500, included: false, default: false },
+  { id: "natural_stone", title: "Natural Stone", desc: "Premium natural stone paving.", img: "images/placeholder.jfif", price: 8500, included: false, default: false },
+  { id: "pavers", title: "Pavers", desc: "Classic paver hardscape.", img: "images/placeholder.jfif", price: 4200, included: false, default: true },
+  { id: "timber_decking", title: "Timber Decking", desc: "Warm timber deck area.", img: "images/placeholder.jfif", price: 3800, included: false, default: false }
 ];
 
 const coverOptions = [
-  { id: "solar_bubble", title: "Solar Bubble Cover", desc: "Energy-efficient solar cover.", img: "images/placeholder.jfif", price: 800, included: false },
-  { id: "automatic", title: "Automatic Pool Cover", desc: "Convenient automatic cover.", img: "images/placeholder.jfif", price: 12000, included: false }
+  { id: "solar_bubble", title: "Solar Bubble Cover", desc: "Energy-efficient solar cover.", img: "images/placeholder.jfif", price: 800, included: false, default: false },
+  { id: "automatic", title: "Automatic Pool Cover", desc: "Convenient automatic cover.", img: "images/placeholder.jfif", price: 12000, included: false, default: false }
 ];
 
 // === 3. ФУНКЦИИ РАСЧЁТА ДЛЯ КАЖДОЙ СТАТЬИ ===
@@ -810,7 +648,22 @@ window.removeBreakdownOption = removeBreakdownOption;
 
 // === КНОПКА "New Calculation" ===
 function resetCalculator() {
+  // Показываем стартовую страницу
+  document.getElementById('startPage').style.display = 'block';
+  document.getElementById('calculatorContainer').style.display = 'none';
+  
+  // Сбрасываем состояние калькулятора
   stepIndex = 0;
+  step7Activated = false; // Сбрасываем активацию шага 7
+  step8Activated = false; // Сбрасываем активацию шага 8
+  step9Activated = false; // Сбрасываем активацию шага 9
+  // Сбрасываем флаги перевыбора
+  if (typeof needsDesignRechoose !== 'undefined') {
+    needsDesignRechoose = false;
+  }
+  if (typeof needsFinishesRechoose !== 'undefined') {
+    needsFinishesRechoose = false;
+  }
   selectedMaterial = null;
   selectedDesign = null;
   selectedShape = null;
@@ -823,11 +676,595 @@ function resetCalculator() {
   selectedCover = null;
   selectedAmenities = [];
   selectedPlanning = [];
-  renderStep();
 }
 window.resetCalculator = resetCalculator;
 
+// === УНИВЕРСАЛЬНАЯ СИСТЕМА ВЫБОРА КАРТОЧЕК ===
+// ПРИОРИТЕТ ВЫБОРА: included > default > ничего
+// 
+// ДЛЯ SHOPIFY ИНТЕГРАЦИИ:
+// - Поле 'included': true/false - карточка включена в базовую стоимость (цена = 0)
+// - Поле 'default': true/false - карточка выбирается по умолчанию при первом входе в шаг
+// - Поле 'badge': "Included" - показывает бейдж "Included" на карточке
+// - Админ может управлять этими полями через Shopify админку
+// - Приоритет: сначала ищется included карточка, если нет - default карточка
+function initializeDefaultSelections() {
+  // Шаг 0: Material - приоритет: included > default > ничего
+  if (stepIndex === 0 && !selectedMaterial) {
+    // Сначала ищем included карточку
+    let defaultMaterial = materialOptions.find(opt => opt.included);
+    // Если нет included, ищем default карточку
+    if (!defaultMaterial) {
+      defaultMaterial = materialOptions.find(opt => opt.default);
+    }
+    if (defaultMaterial) {
+      selectedMaterial = defaultMaterial.id;
+    }
+  }
+  
+  // Шаг 1: Design - приоритет: included > default > ничего
+  if (stepIndex === 1 && !selectedDesign) {
+    let defaultDesign = null;
+    
+    if (selectedMaterial === 'fibreglass') {
+      // Для fibreglass ищем в fibreglassModels
+      defaultDesign = fibreglassModels.find(opt => opt.included);
+      if (!defaultDesign) {
+        defaultDesign = fibreglassModels.find(opt => opt.default);
+      }
+    } else if (selectedMaterial === 'concrete') {
+      // Для concrete ищем в concreteShapes
+      defaultDesign = concreteShapes.find(opt => opt.included);
+      if (!defaultDesign) {
+        defaultDesign = concreteShapes.find(opt => opt.default);
+      }
+    }
+    
+    if (defaultDesign) {
+      selectedDesign = defaultDesign.id;
+    }
+  }
+  
+  // Шаг 2: Equipment - приоритет: included > default > ничего
+  if (stepIndex === 2 && !selectedEquipment) {
+    // Сначала ищем included карточку
+    let defaultEquipment = equipmentOptions.find(opt => opt.included);
+    // Если нет included, ищем default карточку
+    if (!defaultEquipment) {
+      defaultEquipment = equipmentOptions.find(opt => opt.default);
+    }
+    if (defaultEquipment) {
+      selectedEquipment = defaultEquipment.id;
+    }
+  }
+  
+  // Шаг 3: Finishes - Coping - приоритет: included > default > ничего
+  if (stepIndex === 3 && !selectedCoping) {
+    // Сначала ищем included карточку
+    let defaultCoping = finishesOptions.find(opt => opt.group === 'coping' && opt.included);
+    // Если нет included, ищем default карточку
+    if (!defaultCoping) {
+      defaultCoping = finishesOptions.find(opt => opt.group === 'coping' && opt.default);
+    }
+    if (defaultCoping) {
+      selectedCoping = defaultCoping.id;
+    }
+  }
+  
+  // Шаг 3: Finishes - Internal - приоритет: included > default > ничего
+  if (stepIndex === 3 && !selectedInternal) {
+    // Сначала ищем included карточку
+    let defaultInternal = finishesOptions.find(opt => opt.group === 'internal' && opt.included);
+    // Если нет included, ищем default карточку
+    if (!defaultInternal) {
+      defaultInternal = finishesOptions.find(opt => opt.group === 'internal' && opt.default);
+    }
+    if (defaultInternal) {
+      selectedInternal = defaultInternal.id;
+    }
+  }
+  
+  // Шаг 4: Hardscape - приоритет: included > default > ничего
+  if (stepIndex === 4 && !selectedHardscape) {
+    // Сначала ищем included карточку
+    let defaultHardscape = hardscapeOptions.find(opt => opt.included);
+    // Если нет included, ищем default карточку
+    if (!defaultHardscape) {
+      defaultHardscape = hardscapeOptions.find(opt => opt.default);
+    }
+    if (defaultHardscape) {
+      selectedHardscape = defaultHardscape.id;
+    }
+  }
+  
+  // Шаг 5: Cover - приоритет: included > default > ничего
+  if (stepIndex === 5 && !selectedCover) {
+    // Сначала ищем included карточку
+    let defaultCover = coverOptions.find(opt => opt.included);
+    // Если нет included, ищем default карточку
+    if (!defaultCover) {
+      defaultCover = coverOptions.find(opt => opt.default);
+    }
+    if (defaultCover) {
+      selectedCover = defaultCover.id;
+    }
+  }
+  
+  // Шаг 6: Amenities - множественный выбор, выбираем все default
+  if (stepIndex === 6 && selectedAmenities.length === 0) {
+    const defaultAmenities = amenitiesOptions.filter(opt => opt.default);
+    if (defaultAmenities.length > 0) {
+      selectedAmenities = defaultAmenities.map(opt => opt.id);
+    }
+  }
+  
+  // Шаг 7: Included - все карточки included, но можно выбрать default для показа
+  // (обычно все included карточки показываются, но админ может выбрать какие показывать по умолчанию)
+  if (stepIndex === 7) {
+    // Для included шага логика может быть особой - показывать все included или только default
+    // Пока оставляем как есть - показываются все included карточки
+  }
+  
+  // Шаг 8: Planning - множественный выбор, выбираем все default
+  if (stepIndex === 8 && selectedPlanning.length === 0) {
+    const defaultPlanning = planningOptions.filter(opt => opt.default);
+    if (defaultPlanning.length > 0) {
+      selectedPlanning = defaultPlanning.map(opt => opt.id);
+    }
+  }
+}
+
+// === СТРУКТУРА ДАННЫХ ДЛЯ SHOPIFY АДМИНКИ ===
+// Эта структура может быть экспортирована/импортирована через Shopify API
+// или использоваться для создания админского интерфейса
+const shopifyAdminStructure = {
+  material: {
+    step: 0,
+    title: "Material",
+    options: materialOptions,
+    // Админ может редактировать:
+    // - included: true/false (включено в базовую стоимость)
+    // - default: true/false (выбирается по умолчанию)
+    // - badge: "Popular", "Customizable" (показывает бейдж)
+    // - title, desc, img (контент карточки)
+  },
+  design: {
+    step: 1,
+    title: "Design",
+    groups: {
+      fibreglass: {
+        title: "Fibreglass Models",
+        options: fibreglassModels
+      },
+      concrete: {
+        title: "Concrete Shapes", 
+        options: concreteShapes
+      }
+    }
+  },
+  equipment: {
+    step: 2,
+    title: "Equipment",
+    options: equipmentOptions,
+    // Админ может редактировать:
+    // - included: true/false (включено в базовую стоимость)
+    // - default: true/false (выбирается по умолчанию)
+    // - badge: "Included" (показывает бейдж)
+    // - price: number (цена опции)
+    // - title, desc, img (контент карточки)
+  },
+  finishes: {
+    step: 3,
+    title: "Finishes",
+    groups: {
+      coping: {
+        title: "Coping Material",
+        options: finishesOptions.filter(opt => opt.group === 'coping')
+      },
+      internal: {
+        title: "Internal Finish", 
+        options: finishesOptions.filter(opt => opt.group === 'internal')
+      }
+    }
+  },
+  hardscape: {
+    step: 4,
+    title: "Hardscape",
+    options: hardscapeOptions
+  },
+  cover: {
+    step: 5,
+    title: "Cover",
+    options: coverOptions
+  },
+  amenities: {
+    step: 6,
+    title: "Amenities",
+    options: amenitiesOptions,
+    // Для amenities можно выбрать несколько default опций
+    // или оставить пустым (пользователь выбирает сам)
+  },
+  included: {
+    step: 7,
+    title: "What's Included",
+    options: includedOptions,
+    // Все карточки included по умолчанию
+    // Админ может управлять default для показа
+  },
+  planning: {
+    step: 8,
+    title: "Planning",
+    options: planningOptions,
+    // Для planning можно выбрать несколько default опций
+    // или оставить пустым (пользователь выбирает сам)
+  }
+};
+
+// === ПРИМЕРЫ ИСПОЛЬЗОВАНИЯ ДЛЯ АДМИНА ===
+// Эти функции демонстрируют возможности управления карточками
+
+// Пример 1: Сделать "Concrete" материал дефолтным выбором
+function setConcreteAsDefault() {
+  materialOptions.forEach(opt => opt.default = false);
+  const concrete = materialOptions.find(opt => opt.id === 'concrete');
+  if (concrete) {
+    concrete.default = true;
+  }
+}
+
+// Пример 2: Сделать "The Stride" модель дефолтной для fibreglass
+function setTheStrideAsDefault() {
+  fibreglassModels.forEach(opt => opt.default = false);
+  const theStride = fibreglassModels.find(opt => opt.id === 'the-stride');
+  if (theStride) {
+    theStride.default = true;
+  }
+}
+
+// Пример 3: Сделать "Free Form" форму дефолтной для concrete
+function setFreeFormAsDefault() {
+  concreteShapes.forEach(opt => opt.default = false);
+  const freeform = concreteShapes.find(opt => opt.id === 'freeform');
+  if (freeform) {
+    freeform.default = true;
+  }
+}
+
+// Пример 4: Сделать "Intermediate" оборудование дефолтным выбором
+function setIntermediateAsDefault() {
+  // Сбрасываем текущий default
+  equipmentOptions.forEach(opt => opt.default = false);
+  // Устанавливаем Intermediate как default
+  const intermediate = equipmentOptions.find(opt => opt.id === 'intermediate');
+  if (intermediate) {
+    intermediate.default = true;
+  }
+}
+
+// Пример 5: Сделать "Natural Stone" coping included и default
+function setNaturalStoneAsIncluded() {
+  const naturalStone = finishesOptions.find(opt => opt.id === 'natural_stone');
+  if (naturalStone) {
+    naturalStone.included = true;
+    naturalStone.default = true;
+    naturalStone.badge = "Included";
+    naturalStone.price = 0;
+  }
+}
+
+// Пример 6: Установить дефолтный hardscape
+function setPaversAsDefaultHardscape() {
+  hardscapeOptions.forEach(opt => opt.default = false);
+  const pavers = hardscapeOptions.find(opt => opt.id === 'pavers');
+  if (pavers) {
+    pavers.default = true;
+  }
+}
+
+// Пример 7: Сделать "Automatic" cover дефолтным
+function setAutomaticCoverAsDefault() {
+  coverOptions.forEach(opt => opt.default = false);
+  const automatic = coverOptions.find(opt => opt.id === 'automatic');
+  if (automatic) {
+    automatic.default = true;
+  }
+}
+
+// Пример 8: Установить дефолтные amenities
+function setDefaultAmenities() {
+  amenitiesOptions.forEach(opt => opt.default = false);
+  // Устанавливаем несколько дефолтных amenities
+  const defaultAmenities = ['bubblers', 'fire_pits', 'led_waterbowls'];
+  defaultAmenities.forEach(id => {
+    const amenity = amenitiesOptions.find(opt => opt.id === id);
+    if (amenity) {
+      amenity.default = true;
+    }
+  });
+}
+
+// Пример 9: Установить дефолтные planning опции
+function setDefaultPlanning() {
+  planningOptions.forEach(opt => opt.default = false);
+  // Устанавливаем несколько дефолтных planning опций
+  const defaultPlanning = ['permits', 'pool_fence'];
+  defaultPlanning.forEach(id => {
+    const planning = planningOptions.find(opt => opt.id === id);
+    if (planning) {
+      planning.default = true;
+    }
+  });
+}
+
+// === ФУНКЦИИ ДЛЯ SHOPIFY ИНТЕГРАЦИИ ===
+// Эти функции могут быть использованы для синхронизации с Shopify
+
+// Экспорт настроек для Shopify
+function exportSettingsForShopify() {
+  return {
+    material: materialOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      badge: opt.badge
+    })),
+    design: {
+      fibreglass: fibreglassModels.map(opt => ({
+        id: opt.id,
+        included: opt.included,
+        default: opt.default
+      })),
+      concrete: concreteShapes.map(opt => ({
+        id: opt.id,
+        included: opt.included,
+        default: opt.default
+      }))
+    },
+    equipment: equipmentOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      badge: opt.badge,
+      price: opt.price
+    })),
+    finishes: finishesOptions.map(opt => ({
+      id: opt.id,
+      group: opt.group,
+      included: opt.included,
+      default: opt.default,
+      badge: opt.badge,
+      price: opt.price
+    })),
+    hardscape: hardscapeOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      price: opt.price
+    })),
+    cover: coverOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      price: opt.price
+    })),
+    amenities: amenitiesOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      price: opt.price
+    })),
+    included: includedOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      price: opt.price
+    })),
+    planning: planningOptions.map(opt => ({
+      id: opt.id,
+      included: opt.included,
+      default: opt.default,
+      price: opt.price
+    }))
+  };
+}
+
+// Импорт настроек из Shopify
+function importSettingsFromShopify(settings) {
+  if (settings.material) {
+    settings.material.forEach(setting => {
+      const opt = materialOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.badge = setting.badge;
+      }
+    });
+  }
+  
+  if (settings.design) {
+    if (settings.design.fibreglass) {
+      settings.design.fibreglass.forEach(setting => {
+        const opt = fibreglassModels.find(o => o.id === setting.id);
+        if (opt) {
+          opt.included = setting.included;
+          opt.default = setting.default;
+        }
+      });
+    }
+    if (settings.design.concrete) {
+      settings.design.concrete.forEach(setting => {
+        const opt = concreteShapes.find(o => o.id === setting.id);
+        if (opt) {
+          opt.included = setting.included;
+          opt.default = setting.default;
+        }
+      });
+    }
+  }
+  
+  if (settings.equipment) {
+    settings.equipment.forEach(setting => {
+      const opt = equipmentOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.badge = setting.badge;
+        opt.price = setting.price;
+      }
+    });
+  }
+  
+  if (settings.finishes) {
+    settings.finishes.forEach(setting => {
+      const opt = finishesOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.badge = setting.badge;
+        opt.price = setting.price;
+      }
+    });
+  }
+  
+  if (settings.hardscape) {
+    settings.hardscape.forEach(setting => {
+      const opt = hardscapeOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.price = setting.price;
+      }
+    });
+  }
+  
+  if (settings.cover) {
+    settings.cover.forEach(setting => {
+      const opt = coverOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.price = setting.price;
+      }
+    });
+  }
+  
+  if (settings.amenities) {
+    settings.amenities.forEach(setting => {
+      const opt = amenitiesOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.price = setting.price;
+      }
+    });
+  }
+  
+  if (settings.included) {
+    settings.included.forEach(setting => {
+      const opt = includedOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.price = setting.price;
+      }
+    });
+  }
+  
+  if (settings.planning) {
+    settings.planning.forEach(setting => {
+      const opt = planningOptions.find(o => o.id === setting.id);
+      if (opt) {
+        opt.included = setting.included;
+        opt.default = setting.default;
+        opt.price = setting.price;
+      }
+    });
+  }
+}
+
+// === ТЕСТОВАЯ ФУНКЦИЯ ДЛЯ ДЕМОНСТРАЦИИ ===
+// Эта функция демонстрирует работу новой функциональности
+function demonstrateDefaultSelection() {
+  console.log('=== ДЕМОНСТРАЦИЯ РАБОТЫ ДЕФОЛТНОГО ВЫБОРА ===');
+  
+  // Текущие настройки
+  console.log('1. Текущие настройки:');
+  console.log('Material:', materialOptions.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Fibreglass Models:', fibreglassModels.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Concrete Shapes:', concreteShapes.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Equipment:', equipmentOptions.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Hardscape:', hardscapeOptions.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Cover:', coverOptions.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Amenities:', amenitiesOptions.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  console.log('Planning:', planningOptions.map(opt => `${opt.title}: included=${opt.included}, default=${opt.default}`));
+  
+  // Демонстрация изменения дефолтного выбора
+  console.log('\n2. Устанавливаем Concrete как дефолтный материал:');
+  setConcreteAsDefault();
+  console.log('Material после изменения:', materialOptions.map(opt => `${opt.title}: default=${opt.default}`));
+  
+  console.log('\n3. Устанавливаем The Stride как дефолтную модель:');
+  setTheStrideAsDefault();
+  console.log('Fibreglass Models после изменения:', fibreglassModels.map(opt => `${opt.title}: default=${opt.default}`));
+  
+  console.log('\n4. Устанавливаем Free Form как дефолтную форму:');
+  setFreeFormAsDefault();
+  console.log('Concrete Shapes после изменения:', concreteShapes.map(opt => `${opt.title}: default=${opt.default}`));
+  
+  console.log('\n5. Устанавливаем дефолтные amenities:');
+  setDefaultAmenities();
+  console.log('Amenities после изменения:', amenitiesOptions.map(opt => `${opt.title}: default=${opt.default}`));
+  
+  console.log('\n6. Устанавливаем дефолтные planning опции:');
+  setDefaultPlanning();
+  console.log('Planning после изменения:', planningOptions.map(opt => `${opt.title}: default=${opt.default}`));
+  
+  // Демонстрация экспорта/импорта
+  console.log('\n7. Экспорт настроек для Shopify:');
+  const exportedSettings = exportSettingsForShopify();
+  console.log('Экспортированные настройки:', JSON.stringify(exportedSettings, null, 2));
+  
+  console.log('\n=== ДЕМОНСТРАЦИЯ ЗАВЕРШЕНА ===');
+}
+
+// Делаем функцию доступной глобально для тестирования
+window.demonstrateDefaultSelection = demonstrateDefaultSelection;
+
+// Функция для запуска калькулятора
+function startCalculator() {
+  document.getElementById('startPage').style.display = 'none';
+  document.getElementById('calculatorContainer').style.display = 'block';
+  renderStep();
+}
+window.startCalculator = startCalculator;
+
+// Функция для активации шага 7 (INCLUDED)
+function activateStep7() {
+  step7Activated = true;
+}
+window.activateStep7 = activateStep7;
+
+// Функция для активации шага 8
+function activateStep8() {
+  step8Activated = true;
+}
+window.activateStep8 = activateStep8;
+
+// Функция для активации шага 9 (REVIEW)
+function activateStep9() {
+  step9Activated = true;
+}
+window.activateStep9 = activateStep9;
+
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
-  renderStep();
+  // Инициализируем переменную для отслеживания смены шагов
+  window.lastStepIndex = -1;
+  
+  // Показываем стартовую страницу
+  document.getElementById('startPage').style.display = 'block';
+  document.getElementById('calculatorContainer').style.display = 'none';
+  
+  // Добавляем обработчик для кнопки старта
+  document.getElementById('startCalculatorBtn').addEventListener('click', startCalculator);
 }); 

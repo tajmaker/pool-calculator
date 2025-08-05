@@ -9,13 +9,102 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/stepper.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/start-page.css">
 </head>
 <body>
-  <div class="calculator-container">
+  <!-- Стартовая страница -->
+  <div id="startPage" class="start-page">
+    <!-- Верхний блок с логотипом и кнопкой контакта -->
+    <div class="start-page-header">
+      <div class="header-container">
+        <div class="logo-section">
+          <img src="images/pool_tools_logo.avif" alt="Pool Tools Logo" class="logo">
+        </div>
+        <div class="contact-section">
+          <button class="contact-btn">Contact Pool Tools Team</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="start-page-main-content">
+      <!-- Левая часть (60%) - текст -->
+      <div class="start-page-left">
+        <div class="content-container">
+          <h1 class="start-page-title">Let's build the pool of your dreams!</h1>
+          <p class="start-page-subtitle">
+            Use our pool cost estimator to determine the potential price of your dream backyard oasis. 
+            Answer a few simple questions, and we'll provide a tailored estimate and essential resources 
+            to guide you in choosing the perfect pool design for your needs!
+          </p>
+          <div class="start-page-note">
+            <em>Note: Our Pool Cost Estimator is optimized for Australian residents. Costs may vary outside of this service area.</em>
+          </div>
+          <div class="start-page-time">
+            <span class="time-badge">(Takes less than 5 minutes)</span>
+          </div>
+          
+          <!-- Центральная кнопка -->
+          <div class="start-button-center">
+            <button id="startCalculatorBtn" class="start-btn">Price my Pool!</button>
+          </div>
+          
+          <div class="start-page-content-section">
+            <h2 class="start-page-heading">Custom Pool Estimator</h2>
+            <p class="start-page-description">
+              Our advanced calculator helps you design and estimate the cost of your dream pool. 
+              Choose from fibreglass, concrete, or vinyl options with customizable features and 
+              get instant pricing tailored to your specific requirements.
+            </p>
+            <div class="start-page-features">
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Instant cost estimates</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Multiple pool types</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Customizable features</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">✓</span>
+                <span class="feature-text">Australia-wide service</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Правая часть (40%) - фоновое изображение -->
+      <div class="start-page-right">
+        <div class="background-section">
+          <img src="images/first_page_background.jpg" alt="Pool Background" class="background-image">
+          <div class="background-overlay"></div>
+        </div>
+      </div>
+
+      <!-- Блок с фото - позиционирован по центру на границе -->
+      <div class="pool-preview-card">
+        <div class="pool-preview-image">
+          <img src="images/first_page_background.jpg" alt="Pool Background">
+        </div>
+        <div class="pool-preview-overlay">
+          <div class="pool-preview-title">WHAT TO EXPECT</div>
+          <div class="pool-preview-subtitle">with our custom pool cost estimator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Калькулятор (изначально скрыт) -->
+  <div id="calculatorContainer" class="calculator-container" style="display: none;">
     <div class="stepper-container">
       <div class="stepper-bar" id="stepperBar"></div>
     </div>
-    <h1 class="main-title">SELECT POOL MATERIAL</h1>
+    <h2 class="main-title">SELECT POOL MATERIAL</h2>
     <div class="subtitle">Choose the type of pool shell that best fits your needs. Only one option can be selected.</div>
     <div class="design-grid" id="designGrid"></div>
     <div id="concreteForm" style="display:none;"></div>
@@ -25,6 +114,7 @@
       <button class="next-btn" id="nextBtn" disabled>NEXT</button>
     </div>
   </div>
+
   <!-- === MODAL (Learn More) === -->
   <div id="modalOverlay" class="modal-overlay" tabindex="-1" aria-modal="true" style="display:none;">
     <div class="modal-learnmore" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
@@ -37,7 +127,6 @@
   <!-- === END MODAL === -->
   
   <!-- Подключение JavaScript файлов -->
-  <script src="js/config/pool-config.js"></script>
   <script src="js/visualizer.js"></script>
   <script src="js/renderer.js"></script>
   <script src="js/main.js"></script>
