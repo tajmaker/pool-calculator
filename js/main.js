@@ -1232,9 +1232,31 @@ window.demonstrateDefaultSelection = demonstrateDefaultSelection;
 
 // Функция для запуска калькулятора
 function startCalculator() {
-  document.getElementById('startPage').style.display = 'none';
-  document.getElementById('calculatorContainer').style.display = 'block';
-  renderStep();
+  console.log('startCalculator function called');
+  
+  const startPage = document.getElementById('startPage');
+  const calculatorContainer = document.getElementById('calculatorContainer');
+  
+  if (startPage) {
+    startPage.style.display = 'none';
+    console.log('Start page hidden');
+  } else {
+    console.error('Start page element not found in startCalculator');
+  }
+  
+  if (calculatorContainer) {
+    calculatorContainer.style.display = 'block';
+    console.log('Calculator container displayed');
+  } else {
+    console.error('Calculator container element not found in startCalculator');
+  }
+  
+  try {
+    renderStep();
+    console.log('renderStep called successfully');
+  } catch (error) {
+    console.error('Error in renderStep:', error);
+  }
 }
 window.startCalculator = startCalculator;
 
@@ -1258,13 +1280,37 @@ window.activateStep9 = activateStep9;
 
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, initializing calculator...');
+  
   // Инициализируем переменную для отслеживания смены шагов
   window.lastStepIndex = -1;
   
   // Показываем стартовую страницу
-  document.getElementById('startPage').style.display = 'block';
-  document.getElementById('calculatorContainer').style.display = 'none';
+  const startPage = document.getElementById('startPage');
+  const calculatorContainer = document.getElementById('calculatorContainer');
+  const startButton = document.getElementById('startCalculatorBtn');
   
-  // Добавляем обработчик для кнопки старта
-  document.getElementById('startCalculatorBtn').addEventListener('click', startCalculator);
+  if (startPage) {
+    startPage.style.display = 'block';
+    console.log('Start page displayed');
+  } else {
+    console.error('Start page element not found');
+  }
+  
+  if (calculatorContainer) {
+    calculatorContainer.style.display = 'none';
+    console.log('Calculator container hidden');
+  } else {
+    console.error('Calculator container element not found');
+  }
+  
+  if (startButton) {
+    startButton.addEventListener('click', function() {
+      console.log('Start button clicked');
+      startCalculator();
+    });
+    console.log('Start button event listener added');
+  } else {
+    console.error('Start button element not found');
+  }
 }); 
